@@ -15,9 +15,15 @@ interface SquareProps {
 }
 
 const Square = ({ value, onClick }: SquareProps): JSX.Element => (
+    
+    <div className='background-square-button'>
+    
     <button className="square" onClick={onClick}>
         {value}
+        BUTTON
     </button>
+    </div>
+    
 );
 
 export default Square;

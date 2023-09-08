@@ -20,10 +20,11 @@ type BoardProps = {
 const Board = ({ squares, onClick }: BoardProps): JSX.Element => {
     return (
         <div className="board">
-        {squares.map((square, i) => (
-            <Square key={i} value={square} onClick={() => onClick(i)} />
-        ))}
+            {squares.map((square, i) => (
+                <Square key={i} value={square} onClick={() => onClick(i)} />
+            ))}
         </div>
+        
     );
     }
 

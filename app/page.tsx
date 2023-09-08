@@ -14,6 +14,22 @@ export default function Home() {
   const [board, setBoard] = useState<string[]>(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState<boolean>(true);
   const [winner, setWinner] = useState<string | null>(null);
+  let stepNumber = 0;
+  let handleClick = (i: number) => {
+    const boardCopy = [...board];
+    //if user click an occupied square or if game is won, return
+    if (winner || boardCopy[i]) return;
+    //put an X or an O in the clicked square
+    boardCopy[i] = xIsNext ? 'X' : 'O';
+    setBoard(boardCopy);
+    setXIsNext(!xIsNext);
+  }
+  //using useEffect hook to check for winner
+
+  useEffect(() => {
+    setWinner(calculateWinner(board));
+  }, [board]);
+
 
   return ( 
     <div className="container">
@@ -22,7 +38,7 @@ export default function Home() {
       <div className="info-wrapper">
         <div>
           <h3>History</h3>
-          {/* <History history={history} moveTo={moveTo} currentMove={stepNumber} /> */}
+          { /*<History history={history} moveTo={moveTo} currentMove={stepNumber} />*/ }
         </div>
         <h3>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</h3>
       </div>
