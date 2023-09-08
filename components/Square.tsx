@@ -20,7 +20,7 @@ const Square = ({ value, onClick }: SquareProps): JSX.Element => (
     
     <button className="square" onClick={onClick}>
         {value}
-        BUTTON
+     
     </button>
     </div>
     
