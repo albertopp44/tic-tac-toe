@@ -27,7 +27,13 @@ export function calculateWinner(squares: string[]): string | null {
             return squares[a];
         }
     }
+    //check if there is a draw
+    if (!squares.includes(null)) {
+        return 'draw';
+    }
     //return null if there is no winner
+    
+
     return null;
 
     

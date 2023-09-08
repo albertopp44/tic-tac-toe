@@ -48,5 +48,22 @@ body {
   cursor: pointer;
   outline: none;
 }
+/** styling of button when we hover over it */
+.board button:hover {
+  background: rgba(var(--foreground-rgb), 0, .5);
+}
+/** styling of button when we click on it */
+.board button:active {
+  background: rgba(var(--foreground-rgb), 0.2);
+}
+
+/** box of button */
+.board button {
+  content:"";
+  display: block;
+  width: 20rem;
+height: 20rem;
+  background: rgba(var(--foreground-rgb), 0.1);
+}
 
 
